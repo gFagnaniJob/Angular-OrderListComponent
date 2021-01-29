@@ -19,12 +19,22 @@ export class OrderListComponent implements OnInit, OnDestroy, OnChanges {
     buttonUpDisabled: boolean = true;
     buttonDownDisabled: boolean = true;
 
+    scrollTop: number = 0
+
     constructor(
     ) {
         
     }
 
     ngOnInit() {
+        this.scrollTop = 0;
+    }
+
+    updateScroll() {
+        let element = document.getElementById('item_'+this.currentSelectedID);
+        let div = document.getElementsByClassName('list-container')[0];
+
+        this.scrollTop = element.offsetTop - div.clientHeight / 2;
     }
 
     ngOnDestroy() {
@@ -77,6 +87,7 @@ export class OrderListComponent implements OnInit, OnDestroy, OnChanges {
             this.list.sort(this.compare);
             this.onOrderChange.emit(this.list.filter(el => el.modified));
             this.disableUpAndDown(tmp, maxOrder, minOrder);
+            this.updateScroll();
         }
     }
 
@@ -105,6 +116,7 @@ export class OrderListComponent implements OnInit, OnDestroy, OnChanges {
             this.list.sort(this.compare);
             this.onOrderChange.emit(this.list.filter(el => el.modified));
             this.disableUpAndDown(tmp, maxOrder, minOrder);
+            this.updateScroll();
         }
     }
 

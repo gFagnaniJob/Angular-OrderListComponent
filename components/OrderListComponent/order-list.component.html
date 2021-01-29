@@ -5,8 +5,8 @@
     </div>
 </div>
 <div class="row align-items-center">
-    <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 list-container">
-        <div *ngFor="let item of list" (click)="selectRow(item.id)"
+    <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 list-container" [(scrollTop)]="scrollTop">
+        <div *ngFor="let item of list" (click)="selectRow(item.id)" [id]="'item_'+item.id"
             [ngClass]="{'row': true, 'list-row': currentSelectedID !== item.id, 'list-row-selected': currentSelectedID === item.id}">
             <span>{{item.description}}</span>
         </div>

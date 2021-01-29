@@ -53,6 +53,15 @@
     cursor: pointer;
 }
 
+.up-and-down-button:disabled {
+    margin-left: 20px;
+    background-color: #258900;
+    border: 2px solid #258900;
+    color: #FFFFFF;
+    font-weight: 700;
+    opacity: 0.5;
+}
+
 .up-and-down-button:hover {
     background-color: black;
     border: 2px solid black;
