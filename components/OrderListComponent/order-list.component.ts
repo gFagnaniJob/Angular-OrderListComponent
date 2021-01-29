@@ -1,18 +1,13 @@
-import { Component, OnInit, OnChanges, OnDestroy, Input, Injector, Output, EventEmitter, SimpleChanges, ViewChild, ElementRef, HostListener, AfterViewInit } from "@angular/core";
-import { IspBaseComponent } from "@isp/xdce-arch-core";
+import { Component, OnInit, OnChanges, OnDestroy, Input, Injector, Output, EventEmitter, SimpleChanges } from "@angular/core";
 import { Subject } from "rxjs";
-import { IspTable, clickEvent } from "../../model/table";
-import { convertUTCDateToLocalDate } from "../../shared.module";
-import { formatDate } from "@angular/common";
-import { TableService } from "../../services/table";
-import { IListItem } from "../../model/orderList";
+import { IListItem } from "../../models/orderList";
 
 @Component({
     selector: 'isp-order-list',
     templateUrl: './order-list.component.html',
     styleUrls: ['./order-list.component.scss']
 })
-export class OrderListComponent extends IspBaseComponent implements OnInit, OnDestroy, OnChanges {
+export class OrderListComponent implements OnInit, OnDestroy, OnChanges {
 
     toDestroy$ = new Subject<void>();
 
@@ -25,9 +20,8 @@ export class OrderListComponent extends IspBaseComponent implements OnInit, OnDe
     buttonDownDisabled: boolean = true;
 
     constructor(
-        protected injector: Injector
     ) {
-        super(injector);
+        
     }
 
     ngOnInit() {
