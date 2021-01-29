@@ -1,0 +1,59 @@
+.list-container {
+    margin-left: 5px;
+    background-color: white;
+    overflow: auto;
+    height: 200px;
+    border: 1px solid black;
+}
+
+.list-row {
+    padding: 5px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.list-row:hover {
+    background-color:rgba(37,137,0,0.5);
+    color: white;
+}
+
+.list-row-selected {
+    padding: 5px;
+    background-color: #258900;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.icon-rotated {
+    transform: rotate(180deg);
+
+    /* Safari */
+    -webkit-transform: rotate(180deg);
+
+    /* Firefox */
+    -moz-transform: rotate(180deg);
+
+    /* IE */
+    -ms-transform: rotate(180deg);
+
+    /* Opera */
+    -o-transform: rotate(180deg);
+
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+}
+
+.up-and-down-button {
+    margin-left: 20px;
+    background-color: #258900;
+    border: 2px solid #258900;
+    color: #FFFFFF;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.up-and-down-button:hover {
+    background-color: black;
+    border: 2px solid black;
+}
